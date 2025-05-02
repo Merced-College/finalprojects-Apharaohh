@@ -1,0 +1,7 @@
+This app is used to create tasks and to be able to manage them.
+You will also be able to sort through them, list all of the tasks as well as be able to do basic things such as being able to search for a specific task.
+This will include the different type of priorties such as low, mid, high.
+So far what I have is the basic UI for the user to experience adding a task, showing the list of tasks, as well as exiting the program. 
+This will allow you to set the category as well as the title of the task itself.
+What I have left is to introduce the logic to support the prioritization of the tasks, include a stack queue to be able to undo the most recent task creation, and be able to call a recursive function to search through the tasks.
+This will be the bulk of the logic to introduce the functionality of the task creation and execution of the different algorithms and data structures.
