@@ -1,3 +1,5 @@
+
+//main class that introduces the constructor for the title, cateogory, priority, and the due date
 public class Task {
     private String title;
     private String category;
