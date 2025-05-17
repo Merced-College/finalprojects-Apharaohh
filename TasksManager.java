@@ -1,18 +1,18 @@
 import java.util.*;
 
 public class TaskManager {
-    // array list = dynamic array
+    // array list initializer
     private ArrayList<Task> allTasks = new ArrayList<>();
-    // hash table
+    // hash table initializer
     private HashMap<String, ArrayList<Task>> categoryMap = new HashMap<>();
-    // queue for priority tasks
+    // linked list initializer
     private Queue<Task> priorityQueue = new LinkedList<>();
 
-    // Add task
+    // Add tasks for the basic functionality for it
     public void addTask(Task task) {
         allTasks.add(task);
 
-        // Add to category map
+        // Used CHATGPT to help add this line of code that allows the user to ge
         categoryMap.putIfAbsent(task.getCategory(), new ArrayList<>());
         categoryMap.get(task.getCategory()).add(task);
 
@@ -22,7 +22,7 @@ public class TaskManager {
         }
     }
 
-    // Recursive search for a task by title
+    // Calls the recursive function 
     public boolean searchTaskByTitle(String keyword, int index) {
         if (index >= allTasks.size()) return false;
         if (allTasks.get(index).getTitle().equalsIgnoreCase(keyword)) {
@@ -34,7 +34,7 @@ public class TaskManager {
         return searchTaskByTitle(keyword, index + 1);
     }
 
-    // Show all tasks in a category
+    // Show all tasks in a category with the logic to handle if no tasks exist in the category
     public void showTasksInCategory(String category) {
         ArrayList<Task> list = categoryMap.get(category);
         if (list == null || list.isEmpty()) {
@@ -46,18 +46,20 @@ public class TaskManager {
         }
     }
 
-    // Print tasks from high-priority queue
+    // Class to be able to print the higher priority tasks
     public void showPriorityReminders() {
         System.out.println("Priority Task Reminders:");
         for (Task task : priorityQueue) {
             task.printTask();
         }
     }
+    // Main class that includes the basic logic for the functionality of the application. Use if-else logic to determine the user input and then adjuss accordingly. 
     public static void main(String[] args) {
         TaskManager tm = new TaskManager();
         Scanner sc = new Scanner(System.in);
         int option;
 
+        // While true it will keep going until the user inputs the exit command which in this case is 5
         while (true) {
             System.out.println("\nTask Tracker Menu:");
             System.out.println("1. Add Task");
